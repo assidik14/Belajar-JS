@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login JavaScript Sederhana</title>
+</head>
+<body>
+    <div id="root"></div>
+    <form action="#">
+        <input type="text" id="username" placeholder="Masukkan username">
+        <br>
+        <input type="password" id="password" placeholder="Masukkan password">
+        <button id="btnLogin" onclick="login()">Login</button>
+    </form>
+
+
+    <script>
+        let root = document.getElementById("root")
+        let username = document.getElementById("username")
+        let password = document.getElementById("password")
+        let btnLogin = document.getElementById("btnLogin")
+        
+        root.innerHTML = "Login JavaScript Sederhana"
+        root.style.padding = "5px"
+        root.style.background = "blue"
+        root.style.color = "white"
+        root.style.textAlign = "center"
+        root.style.marginBottom = "5px"
+
+        function login(){
+            if (username.value == "admin" && password.value == "123"){
+                username.style.display = "none"
+                password.style.display = "none"
+                btnLogin.style.display = "none"
+                root.innerHTML = "Login Berhasil"
+                root.style.background = "tomato"
+            } else {
+                alert("Login Gagal")
+                console.log("Username = " + username.value)
+                console.log("Password = " + password.value)
+                username.value = ""
+                password.value = ""
+            }
+        }
+
+    </script>
+</body>
+</html>
